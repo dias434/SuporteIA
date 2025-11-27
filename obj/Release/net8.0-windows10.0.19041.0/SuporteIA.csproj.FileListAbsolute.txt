@@ -1,0 +1,6 @@
+C:\PIM\SuporteIA\obj\Release\net8.0-windows10.0.19041.0\SuporteIA.csproj.AssemblyReference.cache
+C:\PIM\SuporteIA\obj\Release\net8.0-windows10.0.19041.0\SuporteIA.GeneratedMSBuildEditorConfig.editorconfig
+C:\PIM\SuporteIA\obj\Release\net8.0-windows10.0.19041.0\SuporteIA.AssemblyInfoInputs.cache
+C:\PIM\SuporteIA\obj\Release\net8.0-windows10.0.19041.0\SuporteIA.AssemblyInfo.cs
+C:\PIM\SuporteIA\obj\Release\net8.0-windows10.0.19041.0\SuporteIA.csproj.CoreCompileInputs.cache
+C:\PIM\SuporteIA\obj\Release\net8.0-windows10.0.19041.0\SuporteIA.sourcelink.json

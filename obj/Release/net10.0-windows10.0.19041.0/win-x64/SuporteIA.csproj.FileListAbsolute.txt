@@ -1,0 +1,12 @@
+C:\PIM\SuporteIA\obj\Release\net10.0-windows10.0.19041.0\win-x64\SuporteIA.csproj.AssemblyReference.cache
+C:\PIM\SuporteIA\obj\Release\net10.0-windows10.0.19041.0\win-x64\mauiimage.inputs
+C:\PIM\SuporteIA\obj\Release\net10.0-windows10.0.19041.0\win-x64\mauifont.inputs
+C:\PIM\SuporteIA\obj\Release\net10.0-windows10.0.19041.0\win-x64\mauisplash.inputs
+C:\PIM\SuporteIA\obj\Release\net10.0-windows10.0.19041.0\win-x64\mauimanifest.stamp
+C:\PIM\SuporteIA\obj\Release\net10.0-windows10.0.19041.0\win-x64\Platforms\Windows\App.g.i.cs
+C:\PIM\SuporteIA\obj\Release\net10.0-windows10.0.19041.0\win-x64\Platforms\Windows\App.g.cs
+C:\PIM\SuporteIA\obj\Release\net10.0-windows10.0.19041.0\win-x64\XamlTypeInfo.g.cs
+C:\PIM\SuporteIA\obj\Release\net10.0-windows10.0.19041.0\win-x64\Platforms\Windows\App.xaml
+C:\PIM\SuporteIA\obj\Release\net10.0-windows10.0.19041.0\win-x64\Platforms\Windows\App.xbf
+C:\PIM\SuporteIA\obj\Release\net10.0-windows10.0.19041.0\win-x64\XamlSaveStateFile.xml
+C:\PIM\SuporteIA\obj\Release\net10.0-windows10.0.19041.0\win-x64\SuporteIA.GeneratedMSBuildEditorConfig.editorconfig
