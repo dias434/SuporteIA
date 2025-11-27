@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="SuporteIA.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:SuporteIA.Views"
+    Title="Suporte IA"
+    FlyoutBehavior="Flyout"
+    FlyoutBackgroundColor="#007bff"
+    FlyoutWidth="200">
+
+    <!-- Flyout Header BEM MENOR -->
+    <Shell.FlyoutHeader>
+        <Grid HeightRequest="25" BackgroundColor="#007bff">
+            <VerticalStackLayout Padding="5,3" VerticalOptions="Center">
+                <Label Text="Suporte IA" 
+                       TextColor="White" 
+                       FontSize="10" 
+                       FontAttributes="Bold"/>
+            </VerticalStackLayout>
+        </Grid>
+    </Shell.FlyoutHeader>
+
+    <!-- Menu Principal Mobile COMPACTO -->
+    <FlyoutItem Title="🏠 Início">
+        <ShellContent ContentTemplate="{DataTemplate views:DashboardPage}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="🎫 Meus Tickets">
+        <ShellContent ContentTemplate="{DataTemplate views:MeusTicketsPage}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="⚙️ Configurações">
+        <ShellContent ContentTemplate="{DataTemplate views:ConfiguracoesPage}" />
+    </FlyoutItem>
+
+    <!-- Dias Cliente ACIMA do Sair -->
+    <MenuItem Text="👤 Dias - Cliente" IsEnabled="False" />
+
+    <!-- Item Sair -->
+    <MenuItem Text="🚪 Sair" Clicked="OnSairClicked" />
+
+</Shell>

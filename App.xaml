@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SuporteIA.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <!-- Cores do seu layout -->
+            <Color x:Key="PrimaryColor">#007bff</Color>
+            <Color x:Key="SecondaryColor">#6c757d</Color>
+            <Color x:Key="SuccessColor">#28a745</Color>
+            <Color x:Key="DangerColor">#dc3545</Color>
+            <Color x:Key="WarningColor">#ffc107</Color>
+            <Color x:Key="LightColor">#f8f9fa</Color>
+            <Color x:Key="DarkColor">#212529</Color>
+            <Color x:Key="BackgroundColor">#f5f5f5</Color>
+            <Color x:Key="BorderColor">#ced4da</Color>
+            
+            <!-- Styles para campos visíveis -->
+            <Style TargetType="Entry">
+                <Setter Property="BackgroundColor" Value="White" />
+                <Setter Property="TextColor" Value="{StaticResource DarkColor}" />
+                <Setter Property="PlaceholderColor" Value="{StaticResource SecondaryColor}" />
+                <Setter Property="HeightRequest" Value="45" />
+            </Style>
+            
+            <Style TargetType="Editor">
+                <Setter Property="BackgroundColor" Value="White" />
+                <Setter Property="TextColor" Value="{StaticResource DarkColor}" />
+                <Setter Property="PlaceholderColor" Value="{StaticResource SecondaryColor}" />
+            </Style>
+            
+            <Style TargetType="Picker">
+                <Setter Property="BackgroundColor" Value="White" />
+                <Setter Property="TextColor" Value="{StaticResource DarkColor}" />
+                <Setter Property="TitleColor" Value="{StaticResource SecondaryColor}" />
+                <Setter Property="HeightRequest" Value="45" />
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

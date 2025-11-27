@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SuporteIA.Views.NovoTicketPage"
+             Title="Novo Chamado"
+             BackgroundColor="White">
+    
+    <ScrollView>
+        <VerticalStackLayout Padding="15" Spacing="20" BackgroundColor="White">
+            
+            <!-- Cabeçalho -->
+            <VerticalStackLayout Spacing="8">
+                <Label Text="Abrir Novo Chamado" 
+                       FontSize="20" 
+                       FontAttributes="Bold" 
+                       TextColor="{StaticResource DarkColor}"/>
+                <Label Text="Descreva seu problema para receber suporte especializado" 
+                       FontSize="13" 
+                       TextColor="{StaticResource SecondaryColor}"/>
+            </VerticalStackLayout>
+            
+            <!-- Formulário -->
+            <Border BackgroundColor="White" 
+                   Stroke="{StaticResource LightColor}"
+                   StrokeThickness="1"
+                   StrokeShape="RoundRectangle 12"
+                   Padding="20">
+                
+                <VerticalStackLayout Spacing="15">
+                    
+                    <!-- Assunto -->
+                    <VerticalStackLayout Spacing="6">
+                        <Label Text="Assunto *" 
+                               FontSize="13" 
+                               FontAttributes="Bold"
+                               TextColor="{StaticResource DarkColor}"/>
+                        <Border Stroke="{StaticResource DarkColor}"
+                               StrokeThickness="2"
+                               StrokeShape="RoundRectangle 8"
+                               BackgroundColor="White">
+                            <Entry x:Name="AssuntoEntry" 
+                                   Placeholder="Digite o assunto do seu chamado" 
+                                   BackgroundColor="Transparent"
+                                   TextColor="{StaticResource DarkColor}"
+                                   PlaceholderColor="{StaticResource SecondaryColor}"
+                                   HeightRequest="40"
+                                   Margin="10,0"/>
+                        </Border>
+                    </VerticalStackLayout>
+                    
+                    <!-- Categoria - COM BOTÕES QUE FUNCIONAM -->
+                    <VerticalStackLayout Spacing="6">
+                        <Label Text="Categoria *" 
+                               FontSize="13" 
+                               FontAttributes="Bold"
+                               TextColor="{StaticResource DarkColor}"/>
+                        
+                        <!-- Botão que simula dropdown -->
+                        <Border Stroke="{StaticResource DarkColor}"
+                               StrokeThickness="2"
+                               StrokeShape="RoundRectangle 8"
+                               BackgroundColor="White"
+                               HeightRequest="45">
+                            <Grid>
+                                <Label x:Name="CategoriaSelecionadaLabel"
+                                       Text="Selecione uma categoria"
+                                       FontSize="13"
+                                       TextColor="{StaticResource SecondaryColor}"
+                                       VerticalOptions="Center"
+                                       Margin="15,0"
+                                       HorizontalOptions="Start"/>
+                                <Label Text="▼"
+                                       FontSize="10"
+                                       TextColor="{StaticResource DarkColor}"
+                                       VerticalOptions="Center"
+                                       HorizontalOptions="End"
+                                       Margin="0,0,15,0"/>
+                            </Grid>
+                            <Border.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnAbrirOpcoesCategoria" />
+                            </Border.GestureRecognizers>
+                        </Border>
+                    </VerticalStackLayout>
+                    
+                    <!-- Descrição -->
+                    <VerticalStackLayout Spacing="6">
+                        <Label Text="Descrição *" 
+                               FontSize="13" 
+                               FontAttributes="Bold"
+                               TextColor="{StaticResource DarkColor}"/>
+                        <Border Stroke="{StaticResource DarkColor}"
+                               StrokeThickness="2"
+                               StrokeShape="RoundRectangle 8"
+                               BackgroundColor="White">
+                            <Editor x:Name="DescricaoEditor" 
+                                   Placeholder="Descreva detalhadamente seu problema..." 
+                                   BackgroundColor="Transparent"
+                                   TextColor="{StaticResource DarkColor}"
+                                   PlaceholderColor="{StaticResource SecondaryColor}"
+                                   HeightRequest="100"
+                                   AutoSize="TextChanges"
+                                   Margin="10,8"/>
+                        </Border>
+                    </VerticalStackLayout>
+                    
+                    <!-- Botões de Ação -->
+                    <Grid ColumnDefinitions="*,*" ColumnSpacing="12" Margin="0,15,0,0">
+                        <Button Text="Cancelar" 
+                               BackgroundColor="{StaticResource LightColor}" 
+                               TextColor="{StaticResource DarkColor}"
+                               Clicked="OnCancelarClicked"
+                               Grid.Column="0"
+                               HeightRequest="40"/>
+                        <Button Text="Enviar Chamado" 
+                               BackgroundColor="{StaticResource PrimaryColor}" 
+                               TextColor="White"
+                               Clicked="OnEnviarTicketClicked"
+                               Grid.Column="1"
+                               HeightRequest="40"/>
+                    </Grid>
+                    
+                </VerticalStackLayout>
+            </Border>
+            
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

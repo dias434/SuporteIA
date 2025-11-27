@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SuporteIA.Views.MeusTicketsPage"
+             Title="Meus Chamados"
+             BackgroundColor="White">
+    
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+
+            <!-- Cabeçalho -->
+            <VerticalStackLayout Spacing="10" BackgroundColor="White">
+                <Label Text="Meus Chamados" 
+                       FontSize="20" 
+                       FontAttributes="Bold" 
+                       TextColor="{StaticResource DarkColor}"
+                       HorizontalOptions="Center"/>
+            </VerticalStackLayout>
+
+            <!-- TABELA COMPACTA SEM CATEGORIA -->
+            <VerticalStackLayout Spacing="0">
+                
+                <!-- Cabeçalho da Tabela COMPACTO -->
+                <Grid ColumnDefinitions="40*,200*,100*,80*" 
+                      BackgroundColor="{StaticResource PrimaryColor}"
+                      HeightRequest="40"
+                      Padding="10,0">
+                    <Label Text="ID" 
+                           FontSize="12" 
+                           FontAttributes="Bold"
+                           TextColor="White"
+                           Grid.Column="0"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Start"/>
+                    <Label Text="Assunto" 
+                           FontSize="12" 
+                           FontAttributes="Bold"
+                           TextColor="White"
+                           Grid.Column="1"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Start"/>
+                    <Label Text="Status" 
+                           FontSize="12" 
+                           FontAttributes="Bold"
+                           TextColor="White"
+                           Grid.Column="2"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Center"/>
+                    <Label Text="Ações" 
+                           FontSize="12" 
+                           FontAttributes="Bold"
+                           TextColor="White"
+                           Grid.Column="3"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Center"/>
+                </Grid>
+
+                <!-- Lista de Chamados COMPACTA -->
+                <CollectionView x:Name="TicketsCollectionView" HeightRequest="400">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Padding="0" HeightRequest="45">
+                                
+                                <!-- Linha do chamado COMPACTA -->
+                                <Grid ColumnDefinitions="40*,200*,100*,80*" 
+                                      BackgroundColor="White"
+                                      HeightRequest="40"
+                                      Padding="10,0">
+                                    
+                                    <!-- ID - ESQUERDA -->
+                                    <Label Text="{Binding ChamadoId}" 
+                                           FontSize="11"
+                                           TextColor="{StaticResource DarkColor}"
+                                           Grid.Column="0"
+                                           VerticalOptions="Center"
+                                           HorizontalOptions="Start"/>
+                                    
+                                    <!-- Assunto - CENTRO ESQUERDA -->
+                                    <Label Text="{Binding Titulo}" 
+                                           FontSize="11"
+                                           TextColor="{StaticResource DarkColor}"
+                                           Grid.Column="1"
+                                           VerticalOptions="Center"
+                                           HorizontalOptions="Start"
+                                           LineBreakMode="TailTruncation"/>
+                                    
+                                    <!-- Status - CENTRO DIREITA -->
+                                    <Label Text="{Binding StatusDisplay}" 
+                                           FontSize="11"
+                                           TextColor="{Binding StatusColor}"
+                                           FontAttributes="Bold"
+                                           Grid.Column="2"
+                                           VerticalOptions="Center"
+                                           HorizontalOptions="Center"/>
+                                    
+                                    <!-- Ações - DIREITA -->
+                                    <Button Text="Ver" 
+                                           BackgroundColor="{StaticResource PrimaryColor}"
+                                           TextColor="White"
+                                           FontSize="10"
+                                           FontAttributes="Bold"
+                                           HeightRequest="25"
+                                           WidthRequest="40"
+                                           Grid.Column="3"
+                                           VerticalOptions="Center"
+                                           HorizontalOptions="Center"
+                                           Clicked="OnVerChamadoClicked"
+                                           CommandParameter="{Binding .}"/>
+                                </Grid>
+                                
+                                <!-- Linha divisória entre chamados -->
+                                <BoxView HeightRequest="1" 
+                                         BackgroundColor="#E0E0E0"
+                                         VerticalOptions="End"
+                                         HorizontalOptions="Fill"/>
+                                
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+                
+            </VerticalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

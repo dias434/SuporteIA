@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SuporteIA.Views.DashboardPage"
+             Title="Início"
+             BackgroundColor="White">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="25">
+
+            <!-- Saudação -->
+            <VerticalStackLayout Spacing="5">
+                <Label Text="Olá, Dias!" 
+                       FontSize="20" 
+                       FontAttributes="Bold" 
+                       TextColor="{StaticResource DarkColor}"/>
+                <Label Text="Bem-vindo ao painel de suporte" 
+                       FontSize="14" 
+                       TextColor="{StaticResource SecondaryColor}"/>
+            </VerticalStackLayout>
+
+            <!-- 2 CARDS QUADRADOS UM DO LADO DO OUTRO -->
+            <Grid ColumnDefinitions="*,*" ColumnSpacing="15" RowDefinitions="100">
+                
+                <!-- Card 1 - Tickets Abertos -->
+                <Border BackgroundColor="White"
+                       Stroke="{StaticResource PrimaryColor}"
+                       StrokeThickness="2"
+                       StrokeShape="RoundRectangle 10"
+                       Padding="10"
+                       Grid.Row="0" Grid.Column="0">
+                    <VerticalStackLayout Spacing="5" HorizontalOptions="Center" VerticalOptions="Center">
+                        <Label Text="{Binding TicketsAbertos}" 
+                               FontSize="24" 
+                               FontAttributes="Bold"
+                               TextColor="{StaticResource PrimaryColor}"
+                               HorizontalOptions="Center"/>
+                        <Label Text="Em Aberto" 
+                               FontSize="12" 
+                               TextColor="{StaticResource DarkColor}"
+                               HorizontalOptions="Center"/>
+                    </VerticalStackLayout>
+                </Border>
+
+                <!-- Card 2 - Tickets Concluídos -->
+                <Border BackgroundColor="White"
+                       Stroke="#28A745"
+                       StrokeThickness="2"
+                       StrokeShape="RoundRectangle 10"
+                       Padding="10"
+                       Grid.Row="0" Grid.Column="1">
+                    <VerticalStackLayout Spacing="5" HorizontalOptions="Center" VerticalOptions="Center">
+                        <Label Text="{Binding TicketsConcluidos}" 
+                               FontSize="24" 
+                               FontAttributes="Bold"
+                               TextColor="#28A745"
+                               HorizontalOptions="Center"/>
+                        <Label Text="Concluídos" 
+                               FontSize="12" 
+                               TextColor="{StaticResource DarkColor}"
+                               HorizontalOptions="Center"/>
+                    </VerticalStackLayout>
+                </Border>
+
+            </Grid>
+
+            <!-- Botão + Novo Chamado PEQUENO E À ESQUERDA -->
+            <HorizontalStackLayout Spacing="10" HorizontalOptions="Start">
+                <Border BackgroundColor="{StaticResource PrimaryColor}"
+                       Stroke="{StaticResource PrimaryColor}"
+                       StrokeThickness="0"
+                       StrokeShape="RoundRectangle 8"
+                       Padding="0"
+                       WidthRequest="150"
+                       HeightRequest="35">
+                    <Grid>
+                        <Button Text="+ Novo Chamado" 
+                               BackgroundColor="Transparent"
+                               TextColor="White"
+                               FontSize="12"
+                               FontAttributes="Bold"
+                               HeightRequest="35"
+                               Clicked="OnNovoTicketClicked"/>
+                    </Grid>
+                </Border>
+            </HorizontalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SuporteIA.Views.LoginPage"
+             Title="Suporte IA"
+             BackgroundColor="{StaticResource BackgroundColor}">
+    
+    <ScrollView>
+        <VerticalStackLayout Padding="30" Spacing="25" VerticalOptions="Center">
+            
+            <!-- Cabeçalho -->
+            <VerticalStackLayout Spacing="10" HorizontalOptions="Center">
+                <Label Text="Suporte IA" 
+                       FontSize="28" 
+                       FontAttributes="Bold" 
+                       TextColor="{StaticResource PrimaryColor}"
+                       HorizontalOptions="Center" />
+                <Label Text="Faça login em sua conta" 
+                       FontSize="16" 
+                       TextColor="{StaticResource SecondaryColor}"
+                       HorizontalOptions="Center" />
+            </VerticalStackLayout>
+            
+            <!-- Card de Login -->
+            <Border BackgroundColor="White" 
+                   Stroke="{StaticResource LightColor}"
+                   StrokeThickness="0"
+                   StrokeShape="RoundRectangle 12"
+                   Padding="25"
+                   Shadow="{x:Null}">
+                
+                <VerticalStackLayout Spacing="20">
+                    
+                    <!-- Email -->
+                    <VerticalStackLayout Spacing="8">
+                        <Label Text="Email" 
+                               FontSize="14" 
+                               FontAttributes="Bold"
+                               TextColor="{StaticResource DarkColor}"/>
+                        <Entry x:Name="EmailEntry"
+                               Placeholder="seu@email.com" 
+                               Keyboard="Email"
+                               BackgroundColor="#f8f9fa"
+                               TextColor="{StaticResource DarkColor}"
+                               PlaceholderColor="#6c757d"
+                               HeightRequest="45" />
+                    </VerticalStackLayout>
+                    
+                    <!-- Senha -->
+                    <VerticalStackLayout Spacing="8">
+                        <Label Text="Senha" 
+                               FontSize="14" 
+                               FontAttributes="Bold"
+                               TextColor="{StaticResource DarkColor}"/>
+                        <Entry x:Name="SenhaEntry"
+                               Placeholder="Digite sua senha" 
+                               IsPassword="True"
+                               BackgroundColor="#f8f9fa"
+                               TextColor="{StaticResource DarkColor}"
+                               PlaceholderColor="#6c757d"
+                               HeightRequest="45" />
+                    </VerticalStackLayout>
+                    
+                    <!-- Lembrar senha -->
+                    <HorizontalStackLayout Spacing="10">
+                        <CheckBox Color="{StaticResource PrimaryColor}" />
+                        <Label Text="Lembrar senha" 
+                               VerticalOptions="Center" 
+                               FontSize="14"
+                               TextColor="{StaticResource SecondaryColor}"/>
+                    </HorizontalStackLayout>
+                    
+                    <!-- Botão Entrar -->
+                    <Button Text="Entrar" 
+                            BackgroundColor="{StaticResource PrimaryColor}" 
+                            TextColor="White"
+                            FontSize="16"
+                            FontAttributes="Bold"
+                            HeightRequest="50"
+                            CornerRadius="10"
+                            Clicked="OnLoginClicked"/>
+                    
+                </VerticalStackLayout>
+            </Border>
+            
+            <!-- Rodapé -->
+            <Label Text="© 2025 Suporte IA" 
+                   FontSize="12" 
+                   HorizontalOptions="Center" 
+                   TextColor="{StaticResource SecondaryColor}"
+                   Margin="0,20,0,0"/>
+                   
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

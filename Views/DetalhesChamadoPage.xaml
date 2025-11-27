@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SuporteIA.Views.DetalhesChamadoPage"
+             Title="Detalhes do Chamado"
+             BackgroundColor="White">
+    
+    <ScrollView>
+        <VerticalStackLayout Padding="15" Spacing="15">
+
+            <!-- Cabeçalho -->
+            <VerticalStackLayout Spacing="8">
+                <Label Text="Detalhes do Chamado" 
+                       FontSize="20" 
+                       FontAttributes="Bold" 
+                       TextColor="{StaticResource DarkColor}"
+                       HorizontalOptions="Center"/>
+            </VerticalStackLayout>
+
+            <!-- Informações do Chamado -->
+            <Border BackgroundColor="#F8F9FA" 
+                   Stroke="#DEE2E6"
+                   StrokeThickness="1"
+                   StrokeShape="RoundRectangle 10"
+                   Padding="15">
+                
+                <VerticalStackLayout Spacing="10">
+                    <HorizontalStackLayout Spacing="10">
+                        <Label Text="Assunto:" 
+                               FontSize="14" 
+                               FontAttributes="Bold"
+                               TextColor="{StaticResource DarkColor}"
+                               VerticalOptions="Center"/>
+                        <Label Text="{Binding Chamado.Titulo}" 
+                               FontSize="14"
+                               TextColor="{StaticResource DarkColor}"
+                               VerticalOptions="Center"/>
+                    </HorizontalStackLayout>
+
+                    <HorizontalStackLayout Spacing="10">
+                        <Label Text="Status:" 
+                               FontSize="14" 
+                               FontAttributes="Bold"
+                               TextColor="{StaticResource DarkColor}"
+                               VerticalOptions="Center"/>
+                        <Label Text="{Binding StatusDisplay}" 
+                               FontSize="14"
+                               TextColor="{Binding StatusColor}"
+                               FontAttributes="Bold"
+                               VerticalOptions="Center"/>
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- HISTÓRICO DE CONVERSA ESTILO WHATSAPP -->
+            <VerticalStackLayout Spacing="10">
+                <Label Text="Conversa" 
+                       FontSize="16" 
+                       FontAttributes="Bold"
+                       TextColor="{StaticResource DarkColor}"/>
+
+                <!-- Área da Conversa -->
+                <ScrollView x:Name="ConversaScrollView" HeightRequest="300">
+                    <VerticalStackLayout x:Name="ConversaContainer" Spacing="8" Padding="5"/>
+                </ScrollView>
+
+                <!-- Nova Mensagem -->
+                <Grid ColumnDefinitions="*,Auto" ColumnSpacing="10">
+                    <Border Stroke="{StaticResource DarkColor}"
+                           StrokeThickness="1"
+                           StrokeShape="RoundRectangle 20"
+                           BackgroundColor="White">
+                        <Entry x:Name="NovaMensagemEntry" 
+                               Placeholder="Digite sua mensagem..." 
+                               BackgroundColor="Transparent"
+                               TextColor="{StaticResource DarkColor}"
+                               PlaceholderColor="{StaticResource SecondaryColor}"
+                               HeightRequest="40"
+                               Margin="15,0"/>
+                    </Border>
+                    
+                    <Button Text="➤" 
+                           BackgroundColor="{StaticResource PrimaryColor}" 
+                           TextColor="White"
+                           FontAttributes="Bold"
+                           HeightRequest="40"
+                           WidthRequest="40"
+                           Grid.Column="1"
+                           Clicked="OnEnviarMensagemClicked"/>
+                </Grid>
+            </VerticalStackLayout>
+
+            <!-- Botão Concluir Chamado -->
+            <Button Text="✅ Concluir Chamado" 
+                   BackgroundColor="#28A745" 
+                   TextColor="White"
+                   FontAttributes="Bold"
+                   HeightRequest="45"
+                   Clicked="OnConcluirChamadoClicked"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
