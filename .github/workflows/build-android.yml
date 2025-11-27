@@ -1,0 +1,45 @@
+name: Build Android APK
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '8.0.x'
+
+    - name: Setup Java
+      uses: actions/setup-java@v4
+      with:
+        java-version: '17'
+        distribution: 'microsoft'
+
+    - name: Install Android SDK
+      uses: android-actions/setup-android@v3
+
+    - name: Restore dependencies
+      run: dotnet restore
+
+    - name: Build Android APK
+      run: dotnet build SuporteIA.csproj -c Release -f net8.0-android -p:AndroidKeyStore=True -p:AndroidSigningKeyPass=android -p:AndroidSigningStorePass=android -p:AndroidSigningKeyAlias=android -p:AndroidSigningStorePass=android
+
+    - name: Publish Android APK
+      run: dotnet publish SuporteIA.csproj -c Release -f net8.0-android -o ./apk/ -p:AndroidPackageFormat=apk
+
+    - name: Upload APK artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: suporte-ia-apk
+        path: apk/*.apk
+        retention-days: 30
